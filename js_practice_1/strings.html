@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Strings</h2>
+
+<p>Strings are written inside quotes. You can use single or double quotes:</p>
+
+<p id="demo"></p>
+
+<script>
+let carName1 = "Volvo XC60"; // Double quotes
+let carName2 = 'Volvo XC60'; // Single quotes
+
+document.getElementById("demo").innerHTML = carName1 + "<br>" + carName2; 
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Strings</h2>
+
+<p>You can use quotes inside a string, as long as they don't match the quotes surrounding the string.</p>
+
+<p id="demo1"></p>
+
+<script>
+let answer1 = "It's alright";
+let answer2 = "He is called 'Johnny'";
+let answer3 = 'He is called "Johnny"'; 
+
+document.getElementById("demo1").innerHTML = answer1 + "<br>" + answer2 + "<br>" + answer3; 
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Strings</h2>
+
+<p>The escape sequence \" inserts a double quote in a string.</p>
+
+<p id="demo2"></p>
+
+<script>
+let t = "We are the so-called \"Vikings\" from the north.";
+document.getElementById("demo2").innerHTML = t; 
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Strings</h2>
+
+<p>
+You can break a code line within a text string with a backslash.
+</p>
+
+<p id="demo3"></p>
+
+<script>
+document.getElementById("demo3").innerHTML = "Hello \
+Dolly!";
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Strings</h2>
+
+<p>The safest way to break a code line in a string is using string addition.</p>
+
+<p id="demo4"></p>
+
+<script>
+document.getElementById("demo4").innerHTML = "Hello " +
+"Dolly!";
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Properties</h2>
+
+<p>The length property returns the length of a string:</p>
+
+<p id="demo5"></p>
+
+<script>
+let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+document.getElementById("demo5").innerHTML = text.length;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Strings</h2>
+
+<p id="demo6"></p>
+
+<script>
+// x is a string
+let x = "John";
+
+// y is an object
+let y = new String("John");
+
+document.getElementById("demo6").innerHTML =
+typeof x + "<br>" + typeof y;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>Never Create Strings as Objects</h2>
+<p>Strings and objects cannot be safely compared.</p>
+
+<p id="demo7"></p>
+
+<script>
+let a = "John";        // x is a string
+let b = new String("John");  // y is an object
+let c = new String("John");  // y is an object
+document.getElementById("demo7").innerHTML = (a==b) + "<br>" +
+ (typeof a==typeof b) + "<br>" + (a===b) + "<br>" + (b==c);
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The slice() method extract a part of a string
+and returns the extracted parts in a new string:</p>
+
+<p id="demo8"></p>
+
+<script>
+let str = "Apple, Banana, Kiwi";
+document.getElementById("demo8").innerHTML = str.slice(7,13) + "<br>" + str.slice(-12,-6) + "<br>" +
+ str.slice(7) + "<br>" + str.slice(-12); 
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The substring() method extract a part of a string and returns the extracted parts in a new string:</p>
+
+<p id="demo9"></p>
+
+<script>
+let st = "Apple, Banana, Kiwi";
+document.getElementById("demo9").innerHTML = st.substring(7,13) + "<br>" + st.slice(-12,-6);
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The substr() method extract a part of a string
+and returns the extracted parts in a new string:</p>
+
+<p id="demo10"></p>
+
+<script>
+let s = "Apple, Banana, Kiwi";
+document.getElementById("demo10").innerHTML = s.substr(7,6) + "<br>" + s.substr(-4);
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+<p>The replace() method is case sensitive. MICROSOFT (with upper-case) will not be replaced.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo11">Please visit Microsoft and Microsoft!</p>
+
+<script>
+function myFunction() {
+  let text1 = document.getElementById("demo11").innerHTML;
+  document.getElementById("demo11").innerHTML =
+  text1.replace("Microsoft","W3Schools");
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myfunction()">Try it</button>
+
+<p id="demo12">Please visit Microsoft!</p>
+
+<script>
+function myfunction() {
+  let text2 = document.getElementById("demo12").innerHTML; 
+  document.getElementById("demo12").innerHTML =
+  text2.replace(/MICROSOFT/i,"W3Schools");
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>Replace all occurrences of "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunc()">Try it</button>
+
+<p id="demo13">Please visit Microsoft and Microsoft!</p>
+
+<script>
+function myFunc() {
+  let text3 = document.getElementById("demo13").innerHTML; 
+  document.getElementById("demo13").innerHTML =
+  text3.replace(/Microsoft/g,"W3Schools");
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+<p>Convert string to upper case:</p>
+
+<button onclick="myfunc()">Try it</button>
+
+<p id="demo14">Hello World!</p>
+
+<script>
+function myfunc() {
+  let text4 = document.getElementById("demo14").innerHTML;
+  document.getElementById("demo14").innerHTML =
+  text4.toUpperCase() + "<br>" + text4.toLowerCase();
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The concat() method joins two or more strings:</p>
+
+<p id="demo15"></p>
+
+<script>
+let text5 = "           Hello";
+let text6 = "World!";
+let text7 = text5.concat(" ",text6);
+document.getElementById("demo15").innerHTML = text7;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h1>JavaScript Strings</h1>
+<h2>The trim() Method</h2>
+
+<p id="demo16"></p>
+
+<script>
+let text8 = "     Hello World!     ";
+let text9 = text8.trim();
+
+document.getElementById("demo16").innerHTML =
+"Length text1=" + text8.length + "<br>Length2 text2=" + text9.length;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The padStart() and padEnd() method pads a string with another string:</p>
+
+<p id="demo17"></p>
+
+<script>
+let text10 = "5";
+document.getElementById("demo17").innerHTML = text10.padStart(6,"nandhini") + "<br>" + 
+typeof text10.padStart(4,"0") + "<br>" + text10.padEnd(4,"x");
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The padStart() method pads a string with another string:</p>
+
+<p id="demo18"></p>
+
+<script>
+let numb = 5;
+let text11 = numb.toString();
+document.getElementById("demo18").innerHTML = text11.padStart(4,0) + "<br>" + text11.padEnd(4,"x");
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The charAt() method returns the character at a given position in a string:</p>
+<p>The charCodeAt() method returns the unicode of the character at a given position in a string:</p>
+<p>ECMAScript 5 allows property access on strings:</p>
+
+<p id="demo19"></p>
+
+<script>
+var text12 = "HELLO WORLD";
+document.getElementById("demo19").innerHTML = text12.charAt(0) + "<br>" + text12.charCodeAt(0) + "<br>" + text12[0];
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>ES5 (2009) allows property acces on strings. But read only:</p>
+
+<p id="demo20"></p>
+
+<script>
+let text13 = "HELLO WORLD";
+
+text13[0] = "A";  // Does not work
+
+document.getElementById("demo20").innerHTML = text13;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+<p>Display the first array element, after a string split:</p>
+
+<p id="demo21"></p>
+
+<script>
+let text14 = "a,b,c,d,e,f";
+const myArray = text14.split(",");
+document.getElementById("demo21").innerHTML = myArray[0];
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+<p>Using String.split():</p>
+
+<p id="demo22"></p>
+
+<script>
+let text15 = "Hello";
+const myArr = text15.split("");
+
+text15 = "";
+for (let i = 0; i < myArr.length; i++) {
+  text15 += myArr[i] + "<br>"
+}
+document.getElementById("demo22").innerHTML = text15;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Methods</h2>
+
+<p>The indexOf() method returns the position of the first occurrence of a specified text:</p>
+<p>The lastIndexOf() method returns the position of the last occurrence of a specified text:</p>
+<p>Both indexOf(), and lastIndexOf() return -1 if the text is not found:</p>
+<p>The indexOf() method accepts a second parameter as the starting position for the search:</p>
+<p>The lastIndexOf() method accepts a second parameter as the starting position for the search.</p>
+<p>Remember that the lastIndexOf() method searches backwards, so position 15 means start the search at position 15, and search to the beginning.</p>
+<p>Position 15 is position 15 from the beginning.</p>
+<p>The search() method returns the position of the first occurrence of a specified text in a string:</p>
+
+<p id="demo23"></p>
+
+<script>
+let d = "Please locate where 'locate' occurs!";
+document.getElementById("demo23").innerHTML = d.indexOf("locate") + "<br>" + 
+d.lastIndexOf("locate") + "<br>" + d.indexOf("John") + "<br>" + 
+d.indexOf("locate",15) + "<br>" + d.lastIndexOf("locate", 15) + "<br>" + d.search("locate");
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Search</h2>
+
+<p>Search a string for "ain":</p>
+<p>Perform a global, case-insensitive search for "ain":</p>
+
+<p id="demo24"></p>
+
+<script>
+let text16 = "The rain in SPAIN stays mainly in the plain"; 
+document.getElementById("demo24").innerHTML = text16.match(/ain/g) + "<br>" +
+text16.match(/ain/gi);
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript String Search</h2>
+
+<p>Check if a string includes "world":</p>
+<p>Check if a string starts with "Hello":</p>
+<p>Check if a string ends with "universe":</p>
+
+<p id="demo25"></p>
+
+<p>The includes() method is not supported in Internet Explorer.</p>
+<p>The startsWith() method is not supported in Internet Explorer.</p>
+
+<script>
+let text17 = "Hello world, welcome to the universe";
+document.getElementById("demo25").innerHTML = text17.includes("world") + "<br>" + 
+text17.includes("world", 12) + "<br>" + text17.startsWith("Hello") + "<br>" + 
+text17.startsWith("world", 6) + "<br>" + text17.endsWith("universe") + "<br>" + 
+text17.endsWith("world", 11);
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Template Literals</h2>
+
+<p>Template literals use back-ticks (``) to define a string:</p>
+
+<p id="demo26"></p>
+
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let text18 = `Hello world!`;
+document.getElementById("demo26").innerHTML = text18;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Template Literals</h2>
+
+<p>With back-ticks, you can use both single and double quotes inside a string:</p>
+
+<p id="demo27"></p>
+
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let text19 = `He's often called "Johnny"`;
+document.getElementById("demo27").innerHTML = text19;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Template Literals</h2>
+
+<p>Template literals allows multiline strings:</p>
+
+<p id="demo28"></p>
+
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let text20 =
+
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+
+document.getElementById("demo28").innerHTML = text20;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Template Literals</h2>
+
+<p>Template literals allows variables in strings:</p>
+
+<p id="demo29"></p>
+
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let firstName = "John";
+let lastName = "Doe";
+
+let text21 = `Welcome ${firstName}, ${lastName}!`;
+
+document.getElementById("demo29").innerHTML = text21;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Template Literals</h2>
+
+<p>Template literals allows variables in strings:</p>
+
+<p id="demo30"></p>
+
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let price = 10;
+let VAT = 0.25;
+let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+
+document.getElementById("demo30").innerHTML = total;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Template Literals</h2>
+
+<p>Template literals allows variables in strings:</p>
+
+<p id="demo31"></p>
+
+<p>Template literals are not supported in Internet Explorer.</p>
+
+<script>
+let header = "Templates Literals";
+let tags = ["template literals", "javascript", "es6"];
+
+let html = `<h2>${header}</h2><ul>`;
+
+for (const y of tags) {
+  html += `<li>${y}</li>`;
+}
+
+html += `</ul>`;
+document.getElementById("demo31").innerHTML = html;
+</script>
+
+</body>
+</html>

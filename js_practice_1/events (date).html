@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>My First JavaScript</h2>
+
+<button type="button"
+onclick="document.getElementById('demo').innerHTML = Date()">
+Click me to display Date and Time.</button>
+
+<p id="demo"></p>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript HTML Events</h2>
+<button onclick="this.innerHTML=Date()">The time is?</button>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript HTML Events</h2>
+<p>Click the button to display the date.</p>
+
+<button onclick="displayDate()">The time is?</button>
+
+<script>
+function displayDate() {
+  document.getElementById("demo1").innerHTML = Date();
+}
+</script>
+
+<p id="demo1"></p>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript HTML Events</h2>
+<p>Move the mouse on button to display the date.</p>
+
+<button onmouseover="this.innerHTML=Date()">The time is?</button>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript HTML Events</h2>
+<p>Move out the mouse on button to display the date.</p>
+
+<button onmouseout="this.innerHTML=Date()">The time is?</button>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript HTML Events</h2>
+<p>The button element should do something when someone clicks on it.</p>
+
+<button onclick ="alert('Hello')">Click me.</button>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript HTML Events</h2>
+<p>The div element should turn red when someone moves the mouse over it.</p>
+
+<div onmouseover ="this.style.backgroundColor='red'">myDIV.</div>
+
+</body>
+</html> 

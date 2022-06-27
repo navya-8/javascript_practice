@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Methods</h2> 
+<p>The toString() method returns an array as a comma separated string:</p>
+<p>The join() method joins array elements into a string.</p>
+<p>It this example we have used " * " as a separator between the elements:</p>
+<p>The concat() method merges (concatenates) arrays:</p>
+<p id="demo"></p>
+
+<p>The pop() method removes the last element from an array.</p>
+<p id="demo1"></p>
+
+<p>The push() method appends a new element to an array:</p>
+<p id="demo2"></p>
+
+<p>The shift() method removes the first element of an array (and "shifts" the other elements to the left):</p>
+<p id="demo3"></p>
+
+<p>The unshift() method adds new elements to the beginning of an array:</p>
+<p>The unshift() method returns the length of the new array:</p>
+<p id="demo4"></p>
+
+<p>Deleting elements leaves undefined holes in an array:</p>
+<p id="demo5"></p>
+
+<p>The splice() method adds new elements to an array:</p>
+<p>The first parameter (2) defines the position where new elements should be added (spliced in).</p>
+<p>The second parameter (0) defines how many elements should be removed.</p>
+<p>The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.</p>
+<p>The splice() method adds new elements to an array, and returns an array with the deleted elements (if any):</p>
+<p id="demo6"></p>
+
+<p>The splice() methods can be used to remove array elements:</p>
+<p>The first parameter (0) defines the position where new elements should be added (spliced in).</p>
+<p>The second parameter (1) defines how many elements should be removed.</p>
+<p>The rest of the parameters are omitted. No new elements will be added.</p>
+<p id="demo7"></p>
+
+<p>This example slices out a part of an array starting from array element 1 ("Orange"):</p>
+<p>When the slice() method is given two arguments, it selects array elements from the start argument, and up to (but not included) the end argument:</p>
+<p id="demo8"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+const a = ["Banana", "Orange", "Apple", "Mango"];
+
+const myGirls = ["Cecilie", "Lone"];
+const myBoys = ["Emil", "Tobias", "Linus"];
+const myChildren = myGirls.concat(myBoys);
+
+const array1 = ["Cecilie", "Lone"];
+const array2 = ["Emil", "Tobias", "Linus"];
+const array3 = ["Robin", "Morgan"];
+const myChildren1 = array1.concat(array2, array3); 
+
+document.getElementById("demo").innerHTML = fruits.toString() + "<br>" + 
+ typeof fruits.toString() + "<br>" + a.join(" * ") + "<br>" + typeof a.join(" * ") + "<br>" + 
+ myChildren + "<br>" + myChildren1 + "<br>" + fruits + "<br>" + fruits.pop();
+
+document.getElementById("demo1").innerHTML = fruits;
+
+fruits.push("Kiwi");
+document.getElementById("demo2").innerHTML = fruits;
+
+fruits.shift();
+document.getElementById("demo3").innerHTML = fruits;
+
+fruits.unshift("Lemon");
+document.getElementById("demo4").innerHTML = fruits + "<br>" + fruits.unshift("Lemon");
+
+delete fruits[0];
+document.getElementById("demo5").innerHTML =
+"The first fruit is: " + fruits[0] + "<br>" + "<h4>Original Array:<br></h4> " +  a;
+
+let removed = a.splice(2, 2, "Lemon", "Kiwi");
+document.getElementById("demo6").innerHTML = "<h4>New Array:<br></h4>" + a + "<br>" + 
+ "<h4>Removed Items:<br></h4>" + removed;
+
+const b = ["Banana", "Orange", "Apple", "Mango"];
+b.splice(0, 1);
+document.getElementById("demo7").innerHTML = b;
+
+const c = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+const d = c.slice(1);
+const e = c.slice(1,3);
+document.getElementById("demo8").innerHTML = c + "<br><br>" + d + "<br><br>" + e;
+</script>
+
+</body>
+</html>

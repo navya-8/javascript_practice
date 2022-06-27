@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript is Case Sensitive</h2>
+
+<p>Try to change lastName to lastname.</p>
+
+<p>Hyphens are not allowed in JavaScript - first-name</p>
+<p>Underscore are allowed in JavaScript - first_name</p>
+<p>Upper Camel Case (Pascal Case) are allowed in JavaScript - FirstName</p>
+<p>Lower Camel Case are allowed in JavaScript - firstName</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+let lastname, lastName;
+lastName = "Doe";
+lastname = "Peterson";
+document.getElementById("demo").innerHTML = lastName;
+document.getElementById("demo1").innerHTML = lastname;
+</script>
+
+</body>
+</html>

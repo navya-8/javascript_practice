@@ -1,0 +1,62 @@
+<h2>JavaScript Array.forEach()</h2>
+<p>Calls a function once for each array element.</p>
+<p>Creates a new array by performing a function on each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+const numbers = [45, 4, 9, 16, 25];
+let txt = "";
+let txt1 = "";
+
+numbers.forEach(myFunction);
+numbers.forEach(myfunction);
+const txt2 = numbers.map(myFunction1);
+const over18 = numbers.filter(myFunction2);
+let sum = numbers.reduce(myFunction3);
+let sum1 = numbers.reduce(myFunction4, 100);
+let sum2 = numbers.reduceRight(myFunction5);
+let allOver18 = numbers.every(myFunction6);
+let someOver18 = numbers.some(myFunction);
+
+document.getElementById("demo").innerHTML = txt + "<br>" + txt1 + "<br>" + txt2 + "<br>" +
+ over18 + "<br>" + "The sum is " + sum + "<br>" + "The sum is " + sum1 + "<br>" + 
+ "The sum is " + sum2 + "<br>" + "All over 18 is " + allOver18;
+
+function myFunction(value, index, array) {
+  txt += value + "<br>"; 
+}
+
+function myfunction(value) {
+  txt1 += value + "<br>"; 
+}
+
+function myFunction1(value, index, array) {
+  return value * 2;
+}
+
+function myFunction2(value, index, array) {
+  return value > 18;
+}
+
+function myFunction3(total, value, index, array) {
+  return total + value;
+}
+
+function myFunction4(total, value) {
+  return total + value;
+}
+
+function myFunction5(total, value, index, array) {
+  return total + value;
+}
+
+function myFunction6(value, index, array) {
+  return value > 18;
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+</body>
+</html>

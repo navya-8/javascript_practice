@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+<p>JavaScript array elements are accessed using numeric indexes (starting from 0).</p>
+<p>JavaScript uses names to access object properties.</p>
+<p>The best way to loop through an array is using a standard for loop:</p>
+<p>Array.forEach() calls a function for each array element.</p>
+
+<p id="demo"></p>
+
+<script>
+const cars = ["Saab", "Volvo", "BMW"];
+const car = [];
+car[0]= "Saab";
+car[1]= "Volvo";
+car[2]= "BMW";
+const a = new Array("Saab", "Volvo", "BMW");
+a[0] = "Opel";
+const person = {firstName:"John", lastName:"Doe", age:46};
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+const b = ["Banana", "Orange", "Apple", "Mango"];
+let c = "<ul>";
+fruits.forEach(myFunction);
+c += "</ul>";
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+} 
+
+document.getElementById("demo").innerHTML = cars + "<br>" + typeof cars + "<br>" + car + "<br>" + 
+ a + "<br>" + cars[0] + "<br>" + person.firstName + "<br>" + typeof person + "<br>" + 
+ cars.length + "<br>" + cars[cars.length-1] + "<br>" + text + "<br>" + c;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p>The push method appends a new element to an array.</p>
+
+<button onclick="myfunction()">Try it</button>
+
+<p id="demo1"></p>
+
+<script>
+const d = ["Banana", "Orange", "Apple"];
+document.getElementById("demo1").innerHTML = d;
+
+function myfunction() {
+  d.push("Lemon");
+  document.getElementById("demo1").innerHTML = d;
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p>The length property provides an easy way to append new elements to an array without using the push() method.</p>
+
+<button onclick="myFunc()">Try it</button>
+
+<p id="demo2"></p>
+
+<script>
+const e = ["Banana", "Orange", "Apple"];
+document.getElementById("demo2").innerHTML = e;
+
+function myFunc() {
+  e[e.length] = "Lemon";
+  document.getElementById("demo2").innerHTML = e;
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p>Adding elements with high indexes can create undefined "holes" in an array.</p>
+
+<p id="demo3"></p>
+
+<script>
+const f = ["Banana", "Orange", "Apple"];
+f[6] = "Lemon";
+
+let g = f.length;
+let h = "";
+for (i = 0; i < g; i++) {
+  h += f[i] + "<br>";
+}
+
+document.getElementById("demo3").innerHTML = h;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p id="demo4"></p>
+
+<script>
+const j = [];
+j[0] = "John";
+j[1] = "Doe";
+j[2] = 46; 
+document.getElementById("demo4").innerHTML = j[0] + " " + j.length;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p>If you use a named index when accessing an array, JavaScript will redefine the array to a standard object, and some array methods and properties will produce undefined or incorrect results.</p>
+
+<p id="demo5"></p>
+
+<script>
+const k = [];
+k["firstName"] = "John";
+k["lastName"] = "Doe";
+k["age"] = 46; 
+document.getElementById("demo5").innerHTML = k[0] + " " + k.length;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<p>Avoid using new Array(). Use [] instead.</p>
+<p>Create an Array with three elements.</p>
+<p>Avoid using new Array().</p>
+<p>The typeof operator, when used on an array, returns object:</p>
+
+<p id="demo6"></p>
+
+<script>
+//const points = new Array(40, 100, 1, 5, 25, 10);
+const l = [40, 100, 1, 5, 25, 10];
+var m = new Array(40, 100, 1);
+var n = new Array(40, 100);
+var o = new Array(40);
+var p = new Array(40);
+document.getElementById("demo6").innerHTML = l[0] + "<br>" + m + "<br>" + n + "<br>" + o + "<br>" + 
+p[0] + "<br>" + typeof l + "<br>" + Array.isArray(q);  
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p>The instanceof operator returns true when used on an array:</p>
+
+<p id="demo7"></p>
+
+<script>
+var q = ["Banana", "Orange", "Apple"];
+document.getElementById("demo7").innerHTML = q instanceof Array;
+</script>
+
+</body>
+</html>
+
