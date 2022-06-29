@@ -1,8 +1,15 @@
 <h2>JavaScript Array.forEach()</h2>
 <p>Calls a function once for each array element.</p>
 <p>Creates a new array by performing a function on each array element.</p>
+<p>The Array.from() method returns an Array object from any object with a length property or any iterable object.</p>
+<p><strong>Note:</strong> The Array.from(), Array.keys(), entries() methods is not supported in Internet Explorer.</p>
+<p><strong>Note:</strong> The includes method is not supported in Edge 13 (and earlier versions).</p>
+<p>The Array.keys() method returns an Array Iterator object with the keys of the array.</p>
 
 <p id="demo"></p>
+
+<p>entries() returns an Array Iterator object with key/value pairs:</p>
+<p id="demo1"></p>
 
 <script>
 const numbers = [45, 4, 9, 16, 25];
@@ -17,11 +24,27 @@ let sum = numbers.reduce(myFunction3);
 let sum1 = numbers.reduce(myFunction4, 100);
 let sum2 = numbers.reduceRight(myFunction5);
 let allOver18 = numbers.every(myFunction6);
-let someOver18 = numbers.some(myFunction);
+let someOver18 = numbers.some(myFunction6);
+let first = numbers.find(myFunction6);
+
+const fruits = ["Apple", "Orange", "Apple", "Mango"];
+let position = fruits.indexOf("Apple") + 1;
+let position1 = fruits.lastIndexOf("Apple") + 1;
+
+const myArr = Array.from("ABCDEFG");
+const keys = fruits.keys();
+let text = "";
+for (let x of keys) {
+  text += x + "<br>";
+}
 
 document.getElementById("demo").innerHTML = txt + "<br>" + txt1 + "<br>" + txt2 + "<br>" +
  over18 + "<br>" + "The sum is " + sum + "<br>" + "The sum is " + sum1 + "<br>" + 
- "The sum is " + sum2 + "<br>" + "All over 18 is " + allOver18;
+ "The sum is " + sum2 + "<br>" + "All over 18 is " + allOver18 + "<br>" +
+ "Some over 18 is " + someOver18 + "<br>" + "Apple is found in position " +
+ position + "<br>" + "Apple is found in position " + position1 + "<br>" + 
+ "First number over 18 is " + first + "<br>" + "First number over 18 has index " + 
+ numbers.findIndex(myFunction6) + "<br>" + myArr + "<br>" + text + "<br>" + fruits.includes("Mango");
 
 function myFunction(value, index, array) {
   txt += value + "<br>"; 
@@ -54,9 +77,12 @@ function myFunction5(total, value, index, array) {
 function myFunction6(value, index, array) {
   return value > 18;
 }
-</script>
 
-<!-- ----------------------------------------------------------------------------------------------- -->
+const f = fruits.entries();
+for (let x of f) {
+  document.getElementById("demo1").innerHTML += x + "<br>";
+}
+</script>
 
 </body>
 </html>

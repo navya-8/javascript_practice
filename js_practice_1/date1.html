@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript new Date()</h2>
+<p>Using new Date(), creates a new date object with the current date and time:</p>
+<p>The toString() method converts a date to a string:</p>
+<p>The toUTCString() method converts a date to a UTC string (a date display standard):</p>
+<p>The toDateString() method converts a date to a date string:</p>
+<p>The toISOString() method converts a date to a date string, using the ISO standard format:</p>
+<p>Using new Date(7 numbers), creates a new date object with the specified date and time:</p>
+<p>Specifying a month higher than 11, will not result in an error but add the overflow to the next year:</p>
+<p>2 numbers specify year and  month:</p>
+<p>One parameter will be interpreted as new Date(milliseconds).</p>
+<p>Two digit years will be interpreted as 19xx:</p>
+<p>One digit years will be interpreted as 19xx:</p>
+<p>A Date object can be created with a specified date and time:</p>
+<p>Using new Date(milliseconds), creates a new date object as January 1, 1970, 00:00:00 Universal Time (UTC) plus the milliseconds:</p>
+<p>100000000000 milliseconds from Jan 1, 1970, is approximately Mar 3, 1973:</p>
+<p>100000000000 milliseconds from Jan 1, 1970, is approximately Oct 31, 1966:</p>
+<p>Separate date and time with a capital T.</p>
+<p>Indicate UTC time with a capital Z.</p>
+<p>Modify the time relative to UTC by adding +HH:MM or subtraction -HH:MM to the time.</p>
+<p>Date.parse() returns the number of milliseconds between the date and January 1, 1970:</p>
+<p>Date.parse(string) returns milliseconds.</p>
+<p>You can use the return value to convert the string to a date object:</p>
+<p>The internal clock in JavaScript counts from midnight January 1, 1970.</p>
+<p>The getTime() function returns the number of milliseconds since then:</p>
+<p>The getFullYear() method returns the full year of a date:</p>
+<p>The getMonth() method returns the month of a date as a number from 0 to 11.</p>
+<p>To get the correct month, you must add 1:</p>
+<p>The getMonth() method returns the month as a number.</p>
+<p>You can use an array to display the name of the month:</p>
+<p>The getDate() method returns the day of a date as a number (1-31):</p>
+<p>The getHours() method returns the hours of a date as a number (0-23):</p>
+<p>The getMinutes() method returns the minutes of a date as a number (0-59):</p>
+<p>The getSeconds() method returns the seconds of a date as a number (0-59):</p>
+<p>The getMilliseconds() method returns the milliseconds of a date as a number (0-999):</p>
+<p>The getDay() method returns the weekday as a number:</p>
+<p>The getDay() method returns the weekday as a number.</p>
+<p>You can use an array to display the name of the weekday:</p>
+<p>The setFullYear() method sets the year of a date object:</p>
+<p>The setFullYear() method can optionally set month and day.</p>
+<p>Please note that month counts from 0. December is month 11:</p>
+<p>The setMonth() method sets the mont of a date object.</p>
+<p>Note that months count from 0. December is month 11:</p>
+<p>The setDate() method sets the day of a date object:</p>
+<p>The setDate() method can be used to add days to a date.</p>
+<p>The setHours() method sets the hours of a date object:</p>
+<p>The setMinutes() method sets the minutes of a date object (0-59):</p>
+<p>The setSeconds() method sets the seconds of a date object (0-59):</p>
+
+<p id="demo"></p>
+
+<script>
+const d = new Date();
+const d1 = new Date(2018, 11, 24, 10, 33, 30, 0);
+const d2 = new Date(2018, 15, 24, 10, 33, 30, 0);
+const d3 = new Date(2018, 11);
+const d4 = new Date(2018);
+const d5 = new Date(99, 11, 24);
+const d6 = new Date(9, 11, 24);
+const d7 = new Date("October 13, 2014 11:13:00");
+const d8 = new Date(0);
+const d9 = new Date(100000000000);
+const d10 = new Date(-100000000000);
+const d11 = new Date("2015-03-25");
+const d12 = new Date("2015-03"); 
+const d13 = new Date("2015");
+const d14 = new Date("2015-03-25T12:00:00Z");
+const d15 = new Date("2015-03-25T12:00:00-06:00");
+const d16 = new Date("03/25/2015");
+const d17 = new Date("Mar 25 2015");
+const d18 = new Date("25 Mar 2015");
+const d19 = new Date("January 25 2015");
+const d20 = new Date("JANUARY, 25, 2015");
+const msec = Date.parse("March 21, 2012");
+let ms = Date.parse("March 21, 2012");
+const d21 = new Date(ms);
+const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+let month = months[new Date().getMonth()];
+let day = days[new Date().getDay()];
+const d22 = new Date();
+d22.setFullYear(2020);
+const d23 = new Date();
+d23.setFullYear(2020, 11, 3);
+const d24 = new Date();
+d24.setMonth(11);
+const d25 = new Date();
+d25.setDate(15);
+const d26 = new Date();
+d26.setDate(d26.getDate() + 50);
+const d27 = new Date();
+d27.setHours(22);
+const d28 = new Date();
+d28.setMinutes(30);
+const d29 = new Date();
+d29.setSeconds(30);
+
+let text;
+const today = new Date();
+const someday = new Date();
+someday.setFullYear(2100, 0, 14);
+
+if (someday > today) {
+  text = "Today is before January 14, 2100.";
+} else {
+  text = "Today is after January 14, 2100.";
+}
+
+document.getElementById("demo").innerHTML = d + "<br>" + d.toString() + "<br>" + d.toUTCString() + 
+ "<br>" + d.toDateString() + "<br>" + d.toISOString() + "<br>" + d1 + "<br>" + d2 + "<br>" + d3 + 
+ "<br>" + d4 + "<br>" + d5 + "<br>" + d6 + "<br>" + d7 + "<br>" + d8 + "<br>" + d9 + "<br>" + d10 +
+ "<br>" + d11 + "<br>" + d12 + "<br>" + d13 + "<br>" + d14 + "<br>" + d15 + "<br>" + d16 + "<br>" +
+ d17 + "<br>" + d18 + "<br>" + d19 + "<br>" + d20 + "<br>" + msec + "<br>" + d21 + "<br>" + 
+ new Date().getTime() + "<br>" + new Date().getFullYear() + "<br>" + (new Date().getMonth() + 1) +
+ "<br>" +  month + "<br>" + new Date().getDate() + "<br>" + new Date().getHours() + "<br>" +
+ new Date().getMinutes() + "<br>" + new Date().getMinutes() + "<br>" + new Date().getSeconds() + 
+ "<br>" + new Date().getMilliseconds() + "<br>" + new Date().getDay() + "<br>" + day + "<br>" + d22 + 
+ "<br>" + d23 + "<br>" + d24 + "<br>" + d25 + "<br>" + d26 + "<br>" + d27 + "<br>" + d28 + "<br>" + 
+ d29 + "<br>" + text;
+</script>
+
+</body>
+</html>
