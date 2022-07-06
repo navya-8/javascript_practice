@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Math.random()</h2>
+
+<p>Math.random() returns a random number between 0 (included) and 1 (excluded):</p>
+<p>Math.floor(Math.random() * 10) returns a random integer between 0 and 9 (both included):</p>
+<p>Math.floor(Math.random() * 11) returns a random integer between 0 and 10 (both included):</p>
+<p>Math.floor() used with Math.random() * 101 returns a random integer between 0 and 100 (both included):</p>
+<p>Math.floor(Math.random() * 10) + 1) returns a random integer between 1 and 10 (both included):</p>
+<p>Math.floor(Math.random() * 100) + 1) returns a random integer between 1 and 100 (both included):</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+"<p><b>0 to 1:</b> " + Math.random() + "</p>" +
+"<p><b>0 to 9:</b> " + Math.floor(Math.random() * 10) + "</p>" +
+"<p><b>0 to 10:</b> " + Math.floor(Math.random() * 11) + "</p>" +
+"<p><b>0 to 100:</b> " + Math.floor(Math.random() * 101) + "</p>" +
+"<p><b>1 to 10:</b> " + (Math.floor(Math.random() * 10) + 1) + "</p>" +
+"<p><b>1 to 100:</b> " + (Math.floor(Math.random() * 100) + 1) + "</p>";
+</script>
+
+</body>
+</html>

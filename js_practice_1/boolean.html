@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Booleans</h2>
+<p>Display the value of Boolean(10 > 9):</p>
+<p>Booleans and Boolean objects cannot be safely compared:</p>
+
+<p id="demo"></p>
+
+<script>
+let x;
+let y = null;
+let z = 10 / "Hello";
+// a is a boolean
+let a = false;
+
+// b is an object
+let b = new Boolean(false);
+const c = new Boolean(false);
+const d = new Boolean(false);
+document.getElementById("demo").innerHTML =  
+"<b>(10 > 9) using boolean</b> " + Boolean(10 > 9) + "<br>" +
+"<b>(10 > 9)</b> " + (10 > 9) + "<br>" +
+"<b>100 is</b> " + Boolean(100) + "<br>" +
+"<b>0 is</b> " + Boolean(0) + "<br>" +
+"<b>-0 is</b> " + Boolean(-0) + "<br>" +
+"<b>Empty string is</b> " + Boolean("") + "<br>" +
+"<b>x(undefined) is</b> " + Boolean(x) + "<br>" +
+"<b>y(null) is</b> " + Boolean(y) + "<br>" +
+"<b>z(NaN) is</b> " + Boolean(z) + "<br>" +
+"<b>3.14 is</b> " + Boolean(3.14) + "<br>" +
+"<b>-15 is</b> " + Boolean(-15) + "<br>" +
+"<b>Any (not empty) string is</b> " + Boolean("Hello") + "<br>" +
+"<b>Even the string 'false' is</b> " + Boolean('false') + "<br>" +
+"<b>Any expression (except zero) is</b> " + Boolean(1 + 7 + 3.14) + "<br>" + 
+"<b>Boolean(a) and object(b) typeof</b> " + typeof a + " and " + typeof b + "<br>" + 
+"<b>Boolean(a) and object(b) comparision(==)</b> " + (a==b) + "<br>" + 
+"<b>Boolean(a) and object(b) comparision(===)</b> " + (a===b) + "<br>" + 
+"<b>Object(c) and object(d) comparision(==)</b> " + (c==d) + "<br>" + 
+"<b>Object(c) and object(d) comparision(===)</b> " + (c===d);
+</script>
+
+</body>
+</html>
