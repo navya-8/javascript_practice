@@ -142,7 +142,9 @@ function myfunction(value) {
 <!-- ----------------------------------------------------------------------------------------------- -->
 
 <h2>JavaScript For Of Loop</h2>
+
 <p>The for of statement loops through the values of any iterable object:</p>
+<p>Iterate over an Array:</p>
 
 <p id="demo8"></p>
 
@@ -162,6 +164,7 @@ document.getElementById("demo8").innerHTML = text3;
 <h2>JavaScript For Of Loop</h2>
 
 <p>The for of statement loops through the values of an iterable object.</p>
+<p>Iterate over a String:</p>
 
 <p id="demo9"></p>
 
@@ -175,5 +178,50 @@ for (let x of language) {
 
 document.getElementById("demo9").innerHTML = text4;
 </script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Iterables</h2>
+<p>Iterate over a Set:</p>
+
+<p id="demo10"></p>
+
+<script>
+// Create a Set
+const letters = new Set(["a","b","c"]);
+
+// List all Elements
+let text5 = "";
+for (const x of letters) {
+  text5 += x + "<br>";
+}
+
+document.getElementById("demo10").innerHTML = text5;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Iterables</h2>
+<p>Iterate over a Map:</p>
+
+<p id="demo11"></p>
+
+<script>
+// Create a Map
+const fruits = new Map([
+  ["apples", 500],
+  ["bananas", 300],
+  ["oranges", 200]
+]);
+
+// List all entries
+let text6 = "";
+for (const x of fruits) {
+  text6 += x + "<br>";
+}
+
+document.getElementById("demo11").innerHTML = text6;
+</script>
+
 </body>
 </html>

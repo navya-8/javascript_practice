@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>The JavaScript typeof Operator</h2>
+
+<p>The typeof operator returns the type of a variable, object, function or expression.</p>
+
+<p id="demo"></p>
+
+<script>
+document.getElementById("demo").innerHTML = 
+  typeof "john" + "<br>" +
+  typeof 3.14 + "<br>" +
+  typeof NaN + "<br>" +
+  typeof false + "<br>" +
+  typeof [1,2,3,4] + "<br>" +
+  typeof {name:'john', age:34} + "<br>" +
+  typeof new Date() + "<br>" +
+  typeof function () {} + "<br>" +
+  typeof myCar + "<br>" +
+  typeof null;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>The JavaScript constructor Property</h2>
+
+<p>The constructor property returns the constructor function for a variable or an 
+object.</p>
+
+<p id="demo1"></p>
+
+<script>
+document.getElementById("demo1").innerHTML = 
+  "john".constructor + "<br>" +
+  (3.14).constructor + "<br>" +
+  false.constructor + "<br>" +
+  [1,2,3,4].constructor + "<br>" +
+  {name:'john', age:34}.constructor + "<br>" +
+  new Date().constructor + "<br>" +
+  function () {}.constructor;
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript Arrays</h2>
+
+<p>This "home made" isArray() function returns true when used on an array:</p>
+<p>This "home made" isDate() function returns true when used on an date:</p>
+
+<p id="demo2"></p>
+
+<script>
+const fruits = ["Banana", "Orange", "Apple"];
+const myDate = new Date();
+document.getElementById("demo2").innerHTML = "Checking is Array or not<br>" + 
+isArray(fruits) + "<br>" + isarray(fruits) + 
+ "<br>Checking is Date or not<br>" + isDate(myDate) + "<br>" + isdate(myDate);
+
+function isArray(myArray) {
+  return myArray.constructor.toString().indexOf("Array") > -1;
+}
+
+function isarray(myArray) {
+  return myArray.constructor === Array;
+}
+
+function isDate(myDate) {
+  return myDate.constructor.toString().indexOf("Date") > -1;
+}
+
+function isdate(myDate) {
+  return myDate.constructor === Date;
+}
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>JavaScript</h2>
+
+<p>The value (and the data type) of a variable with no value is <b>undefined</b>.</p>
+<p>An empty string has both a legal value and a type:</p>
+<p>Objects can be emptied by setting the value to <b>null</b>.</p>
+<p>Objects can be emptied by setting the value to <b>undefined</b>.</p>
+<p>Undefined and null are equal in value but different in type:</p>
+
+<p id="demo3"></p>
+
+<script>
+let car;
+let cars = "Volvo";
+cars = undefined;
+let car1 = "";
+let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+person = null;
+let persons = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+persons = undefined;
+
+document.getElementById("demo3").innerHTML =
+car + "<br>" + typeof car + "<br>" + cars + "<br>" + typeof cars + "<br>" + 
+ "The value is: " + car1 + "<br>" + "The type is: " + typeof car1 + "<br>" + 
+ typeof person + "<br>" + persons + "<br><br>" + 
+ typeof undefined + "<br>" + typeof null + "<br><br>" +
+ (null === undefined) + "<br>" + (null == undefined);
+</script>
+
+<!-- ----------------------------------------------------------------------------------------------- -->
+
+<h2>The JavaScript typeof Operator and JavaScript Type Conversions</h2>
+
+<p>The typeof operator returns the type of a variable or expression:</p>
+<p>The String() method can convert a number to a string.</p>
+<p>The toString() method converts a number to a string.</p>
+<p>Converting false to other types:</p>
+
+<p id="demo4" style="font-family:courier"></p>
+
+<script>
+let y = "5";
+let x = + y;
+let b = "John";
+let a = + b;
+let c = 123;
+let d = false;
+let e = true;
+let f = 0;
+let g = 1;
+let h = "0";
+let i = "000";
+let j = 1;
+let k = NaN;
+let l = Infinity;
+let m = -Infinity;
+let n = "";
+let o = "20";
+let p = "twenty";
+var q = [];
+var r = [20];
+var s = [10,20];
+var t = ["twenty"];
+var u = ["ten","twenty"];
+const v = function(){};
+const w = {};
+let aa = null;
+let ab = undefined;
+document.getElementById("demo4").innerHTML = typeof y + "<br>" + typeof x + 
+ "<br>" + typeof a + "<br>" + typeof b + "<br><br>" + 
+ String(c) + "<br>" + String(123) + "<br>" + String(100 + 23) + "<br><br>" + 
+ c.toString() + "<br>" + (123).toString() + "<br>" + (100 + 23).toString() + "<br><br>" + 
+ (5 + null) + "<br>"  + ("5" + null) + "<br>" + ("5" + 2) + "<br>" + ("5" - 2) + "<br>" + 
+ ("5" * "2") + "<br>" + ("5" / "2") + "<br><br>" + 
+ "Original value : " + d + "<br>" +
+ "Number : " + Number(d) + "<br>" + "String : " + String(d) + "<br>" + "Boolean: " + Boolean(d) +
+ "<br><br>" + "Original value : " + e + "<br>" +
+ "Number : " + Number(e) + "<br>" + "String : " + String(e) + "<br>" + "Boolean: " + Boolean(e) +
+ "<br><br>" + "Original value : " + f + "<br>" +
+ "Number : " + Number(f) + "<br>" + "String : " + String(f) + "<br>" + "Boolean: " + Boolean(f) +
+"<br><br>" + "Original value : " + g + "<br>" +
+ "Number : " + Number(g) + "<br>" + "String : " + String(g) + "<br>" + "Boolean: " + Boolean(g) +
+"<br><br>" + "Original value : " + h + "<br>" +
+ "Number : " + Number(h) + "<br>" + "String : " + String(h) + "<br>" + "Boolean: " + Boolean(h) +
+ "<br><br>" + "Original value : " + i + "<br>" +
+ "Number : " + Number(i) + "<br>" + "String : " + String(i) + "<br>" + "Boolean: " + Boolean(i) +
+ "<br><br>" + "Original value : " + j + "<br>" +
+ "Number : " + Number(j) + "<br>" + "String : " + String(j) + "<br>" + "Boolean: " + Boolean(j) +
+ "<br><br>" + "Original value : " + k + "<br>" +
+ "Number : " + Number(k) + "<br>" + "String : " + String(k) + "<br>" + "Boolean: " + Boolean(k) +
+ "<br><br>" + "Original value : " + l + "<br>" +
+ "Number : " + Number(l) + "<br>" + "String : " + String(l) + "<br>" + "Boolean: " + Boolean(l) +
+ "<br><br>" + "Original value : " + m + "<br>" +
+ "Number : " + Number(m) + "<br>" + "String : " + String(m) + "<br>" + "Boolean: " + Boolean(m) +
+ "<br><br>" + "Original value : " + n + "<br>" +
+ "Number : " + Number(n) + "<br>" + "String : " + String(n) + "<br>" + "Boolean: " + Boolean(n) +
+ "<br><br>" + "Original value : " + o + "<br>" +
+ "Number : " + Number(o) + "<br>" + "String : " + String(o) + "<br>" + "Boolean: " + Boolean(o) +
+ "<br><br>" + "Original value : " + p + "<br>" +
+ "Number : " + Number(p) + "<br>" + "String : " + String(p) + "<br>" + "Boolean: " + Boolean(p) +
+ "<br><br>" + "Original value : " + q + "<br>" +
+ "Number : " + Number(q) + "<br>" + "String : " + String(q) + "<br>" + "Boolean: " + Boolean(q) +
+ "<br><br>" + "Original value : " + r + "<br>" +
+ "Number : " + Number(r) + "<br>" + "String : " + String(r) + "<br>" + "Boolean: " + Boolean(r) +
+ "<br><br>" + "Original value : " + s + "<br>" +
+ "Number : " + Number(s) + "<br>" + "String : " + String(s) + "<br>" + "Boolean: " + Boolean(s) +
+ "<br><br>" + "Original value : " + t + "<br>" +
+ "Number : " + Number(t) + "<br>" + "String : " + String(t) + "<br>" + "Boolean: " + Boolean(t) +
+ "<br><br>" + "Original value : " + u + "<br>" +
+ "Number : " + Number(u) + "<br>" + "String : " + String(u) + "<br>" + "Boolean: " + Boolean(u) +
+ "<br><br>" + "Original value : " + v + "<br>" +
+ "Number : " + Number(v) + "<br>" + "String : " + String(v) + "<br>" + "Boolean: " + Boolean(v) +
+ "<br><br>" + "Original value : " + w + "<br>" +
+ "Number : " + Number(w) + "<br>" + "String : " + String(w) + "<br>" + "Boolean: " + Boolean(w) +
+ "<br><br>" + "Original value : " + aa + "<br>" +
+ "Number : " + Number(aa) + "<br>" + "String : " + String(aa) + "<br>" + "Boolean: " + Boolean(aa) +
+ "<br><br>" + "Original value : " + ab + "<br>" +
+ "Number : " + Number(ab) + "<br>" + "String : " + String(ab) + "<br>" + "Boolean: " + Boolean(ab);
+</script>
+
+</body>
+</html>
