@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>The JavaScript <i>this</i> Keyword</h1>
+<p>In this example, <b>this</b> refers to the <b>person</b> object.</p>
+<p>Because <b>fullName</b> is a method of the person object.</p>
+<p>In this example <strong>this</strong> refers to person2, even if it is a method of person1:</p>
+<p>The member object borrows the fullname method from person:</p> 
+<p id="demo"></p>
+<h1>The JavaScript <i>this</i> Keyword</h1>
+<p>In this example, <b>this</b> refers to the window object:</p>
+<p>Strict mode does not allow default binding</p>
+<p id="demo1"></p>
+<button onclick="this.style.display='none'">Click to Remove Me!</button>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "Nandhini",
+  lastName: "Navya",
+  id: 5566,
+  fullName : function() {
+    return this.firstName + " " + this.lastName;
+  },
+  myFunction : function() {
+    return this;
+  }
+};
+
+const person1 = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const person2 = {
+  firstName:"Navya",
+  lastName: "Nandhini",
+}
+
+let a = person1.fullName.call(person2); 
+
+const member = {
+  firstName:"Hege",
+  lastName: "Nilsen",
+}
+
+let fullName = person.fullName.bind(member);
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName() + "<br>" + person.myFunction() + 
+"<br>" + a + "<br>" + fullName();
+
+let x = this;
+document.getElementById("demo1").innerHTML = x + "<br>" + myFunction();
+
+function myFunction() {
+  return this;
+}
+</script>
+
+</body>
+</html>

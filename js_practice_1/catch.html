@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Errors</h2>
+
+<p><b>You cannot set the number of significant digits of a number to 500:</b></p>
+<p id="demo">
+<p><b>You cannot use the value of a non-existing variable:</b></p>
+<p id="demo1">
+<p><b>You cannot evaluate code that contains a syntax error:</b></p>
+<p id="demo2"></p>
+<p><b>You cannot convert a number to upper case:</b></p>
+<p id="demo3"></p>
+<p><b>Some characters cannot be decoded with decodeURI():</b></p>
+<p id="demo4"></p>
+
+<script>
+let num = 1;
+try {
+  num.toPrecision(500);
+}
+catch(err) {
+  document.getElementById("demo").innerHTML = err.name + "<br>" + err.message;
+}
+// ------------------------------------------------------------
+let x = 5;
+try {
+  x = y + 1;
+}
+catch(err) {
+  document.getElementById("demo1").innerHTML = err.name + "<br>" + err.message;
+}
+// ------------------------------------------------------------
+try {
+  eval("alert('Hello)");
+}
+catch(err) {
+  document.getElementById("demo2").innerHTML = err.name + "<br>" + err.message;
+}
+// ------------------------------------------------------------
+let number = 1;
+try {
+  number.toUpperCase();
+}
+catch(err) {
+  document.getElementById("demo3").innerHTML = err.name + "<br>" + err.message;
+}
+// ------------------------------------------------------------
+try {
+  decodeURI("%%%");
+}
+catch(err) {
+  document.getElementById("demo4").innerHTML = err.name + "<br>" + err.message;
+}
+</script>
+
+</body>
+</html>

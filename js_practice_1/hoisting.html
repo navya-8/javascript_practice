@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo"></p>
+<p>With <b>let</b>, you cannot use a variable before it is declared.</p>
+<p>With <b>const</b>, you cannot use a variable before it is declared.</p>
+<p id="demo1"></p>
+
+
+<script>
+a = 5; // Assign 5 to a
+var x = 5;  // Initialize x
+var z;   // Declare z
+
+elem = document.getElementById("demo"); // Find an element 
+elem.innerHTML = a + "<br> x is " + x + " and y is " + y + "<br>" + z;           // Display a in the element
+
+var a; // Declare a
+var y = 7;  // Initialize y
+z = 7;   // Assign 7 to z
+
+try {
+  carName = "Saab";
+  let carName = "Volvo";
+}
+catch(err) {
+  document.getElementById("demo1").innerHTML = err;
+}
+</script>
+
+</body>
+</html> 
